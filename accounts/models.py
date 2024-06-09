@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.db.models import OneToOneField
-
+from django.db.models import OneToOneField, ForeignKey
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -69,5 +68,3 @@ class UserProfile(models.Model):
     modified_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.user.email
-
-
